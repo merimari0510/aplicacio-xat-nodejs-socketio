@@ -23,4 +23,6 @@ Les tres (o més) màquines unides per una xarxa.
 
 ## Instal·lació
 
-La instal·lació necessària, els passos que s'han de seguir, l'explicació del codi i la demo la podeu trobar a la [presentació]().
+La instal·lació necessària, els passos que s'han de seguir, l'explicació del codi i la demo la podeu trobar a la [presentació](https://github.com/merimari0510/aplicacio-xat-nodejs-socketio/blob/master/presentacio.pdf).
+
+Podeu trobar la informació encara més detallada a la [memòria](https://github.com/merimari0510/aplicacio-xat-nodejs-socketio/blob/master/memoria.pdf).
