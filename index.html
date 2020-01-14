@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Chat Socket IO</title>
+        
+        <script src="https://code.jquery.com/jquery.js"></script>
+				
+        <!-- Estil general -->
+        <link rel="stylesheet" href="css/estil_general.css">
+		<!-- Estil form missatges-->
+        <link rel="stylesheet" href="css/estil_form_messages.css">
+		<!-- Estil form nickname-->
+        <link rel="stylesheet" href="css/estil_form_nickname.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        
+    </head>
+    <body>
+    
+        <div class="container">
+			<hr id="linia_top_nick"/>
+			<!-- Primera pantalla: Escriure el nickname -->
+            <div class="input-group" id="nickWrap">
+                <input id="nickname" class="form-control input-lg" type="text" placeholder="Escriu el teu nickname">
+                <span class="input-group-btn">
+                    <button class="btn btn-lg btn-primary" type="submit" id="setNick">OK</button>
+                </span>
+            </div>			
+			<!-- Si el nickname ja està utilitzat, t'apareix una alerta diguent que el nickname ja està utilitzat -->
+            <div class="alert fade in alert-danger alert-dismissable" data-dismiss="alert" id="login-error" style="display:none;">
+                <button type="button" class="close" id="closeAlert">x</button>
+                Aquest nickname ja està utilitzat. Prova-ho amb un altre.
+            </div>
+            <!-- Fi de l'error -->
+			<!-- Fi primera pantalla -->
+			<hr id="linia_bottom_nick"/>
+			
+			<!-- Sala de chat -->
+            <div id="contentWrap" class="row" style="height: 70%;">
+                <div class="col-md-2"></div>
+				<div id="chatWrap"  class="col-md-6">
+					<!-- Els missatges del chat -->
+					<div id="panel_messages" class="panel panel-success">
+						<div class="panel-heading">Chat</div>
+						<div id="chat" class="panel-body">
+							<ul id="messages"></ul>
+						</div>
+					</div>
+					
+					<!-- Formulari per escriure un missatge -->
+					<div>
+						<form id="send-message" class="input-group" style="text-align:center;margin:5px auto;">
+							<input id="message" class="form-control input-lg" type="text">
+							<span class="input-group-btn">
+								<button id="send_button" class="btn btn-lg btn-primary" type="submit">Envia</button>
+							</span>
+						</form>
+					</div>
+				</div>
+			
+			
+				<!-- Els usuaris actius -->
+				<div id="usersWrap" class="col-md-2">
+					<div class="panel panel-info" style="margin-top: 10px;">
+						<div class="panel-heading" style="text-align: center; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05); box-shadow: 0 1px 2px rgba(0,0,0,0.05);">Usuaris</div>
+						<div id="users" class="panel-body"></div>
+					</div>
+				</div>
+            </div>
+            
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./js/enviament_missatges.js"></script>
+    </body>
+</html>

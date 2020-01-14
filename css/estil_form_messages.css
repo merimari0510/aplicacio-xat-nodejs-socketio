@@ -1,0 +1,41 @@
+#messages
+{
+	list-style-type: none;
+	padding: 0;
+}
+
+#messages li
+{
+	padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+	color: #3C761E;
+	margin-right: 4px;
+}
+
+#messages li:nth-child(odd)
+{
+	background: #eee;
+}
+
+#messages li:nth-child(even)
+{
+	background: #dce3e2;
+	
+}
+
+#message {
+	padding: 10px 17px;
+    background: white;
+    color: #3c763d;
+    font-size: 15px;
+    height: auto;
+}
+
+#send_button {
+	padding: 10px 17px;
+    background: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    font-size: 15px;
+}
